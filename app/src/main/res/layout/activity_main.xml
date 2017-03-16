@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.android.myquiz.MainActivity">
+
+
+    <TextView
+        android:id="@+id/cobalt_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="1. What color is Cobalt" />
+
+    <EditText
+        android:id="@+id/answer1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textCapWords"
+        android:layout_marginBottom="16dp"
+        />
+
+    <TextView
+        android:id="@+id/question2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2. Who was the first American to go to space?"
+        />
+
+    <CheckBox
+        android:id="@+id/Melvill"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mike Melvill" />
+
+    <CheckBox
+        android:id="@+id/Alan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Alan Shepherd" />
+
+    <CheckBox
+        android:id="@+id/Jasmine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Jasmine" />
+
+    <TextView
+        android:id="@+id/question3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="3. What are three primary colors?"
+        />
+
+    <EditText
+        android:id="@+id/answer3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textCapWords"
+        android:layout_marginBottom="16dp"
+        />
+
+    <TextView
+        android:id="@+id/question4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="4. Which planet is nearest to sun?"
+        />
+
+    <CheckBox
+        android:id="@+id/Mercury"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mercury" />
+
+    <CheckBox
+        android:id="@+id/Pluto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pluto" />
+
+    <TextView
+        android:id="@+id/question5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="5. The past tense of must is musted "
+        />
+
+    <RadioButton
+        android:id="@+id/RadioButton1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="True" />
+
+    <RadioButton
+        android:id="@+id/RadioButton2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="False" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:onClick="submitScore"
+        android:textAllCaps="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Final Score"
+        android:id="@+id/final_score"
+        android:padding="10dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="Reset"
+        android:text="Reset"/>
+
+
+</LinearLayout>
+
+</ScrollView>
