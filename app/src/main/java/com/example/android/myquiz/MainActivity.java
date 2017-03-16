@@ -21,11 +21,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button submitButton = (Button) findViewById(R.id.submit);
-        submitButton.setOnClickListener(new View.OnClickListener()
-        {
+        submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 submitScore(v);
             }
         });
@@ -33,10 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void submitScore(View view) {
-
-        EditText answerOne = (EditText) findViewById(R.id.answer1);
-        String answer1 = answerOne.getText().toString().trim();
-
+        score = 0;
 
         boolean checkedMercury = false;
         boolean checkedPluto = false;
@@ -46,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
         boolean checkedAlan = false;
         boolean checkedJasmine = false;
 
+        EditText answerOne = (EditText) findViewById(R.id.answer1);
+        String answer1 = answerOne.getText().toString().trim();
         if (answer1.matches("Blue")) {
             score++;
         }
@@ -59,27 +56,23 @@ public class MainActivity extends AppCompatActivity {
         checkedJasmine = jasmineCheckBox.isChecked();
 
         EditText answerThree = (EditText) findViewById(R.id.answer3);
-        String answer3 = answerOne.getText().toString().trim();
+        String answer3 = answerThree.getText().toString().trim();
 
         if (answer3.matches("Blue,Red,Green")) {
             score++;
-
-            CheckBox mercuryCheckBox = (CheckBox) findViewById(R.id.Mercury);
-            checkedMercury = mercuryCheckBox.isChecked();
-
-            CheckBox plutoCheckBox = (CheckBox) findViewById(R.id.Pluto);
-            checkedPluto = plutoCheckBox.isChecked();
-
-            RadioButton radiobutton1 = (RadioButton) findViewById(R.id.RadioButton1);
-           checkedRadioButton1 = radiobutton1.isChecked();
-
-            RadioButton radioButton2 = (RadioButton) findViewById(R.id.RadioButton2);
-             checkedRadioButton2 = radioButton2.isChecked();
-
-
-
         }
 
+        CheckBox mercuryCheckBox = (CheckBox) findViewById(R.id.Mercury);
+        checkedMercury = mercuryCheckBox.isChecked();
+
+        CheckBox plutoCheckBox = (CheckBox) findViewById(R.id.Pluto);
+        checkedPluto = plutoCheckBox.isChecked();
+
+        RadioButton radiobutton1 = (RadioButton) findViewById(R.id.RadioButton1);
+        checkedRadioButton1 = radiobutton1.isChecked();
+
+        RadioButton radioButton2 = (RadioButton) findViewById(R.id.RadioButton2);
+        checkedRadioButton2 = radioButton2.isChecked();
 
         finalScore = calculateScore(checkedJasmine, checkedAlan, checkedMelvill, checkedMercury, checkedPluto, checkedRadioButton1, checkedRadioButton2);
 
@@ -87,20 +80,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //calculate score
-    private int calculateScore(boolean checkedJasmine, boolean checkedAlan, boolean checkedMelvill, boolean checkedMercury, boolean checkedPluto, boolean checkedRadioButton1, boolean checkedRadioButton2)
-    {
-        if (checkedAlan){
-            if(!(checkedMelvill || checkedJasmine))
-                score++;        }
-
-        if (checkedMercury){
-            score++;        }
+    private int calculateScore(boolean checkedJasmine, boolean checkedAlan, boolean checkedMelvill, boolean checkedMercury, boolean checkedPluto, boolean checkedRadioButton1, boolean checkedRadioButton2) {
 
 
-        if (checkedRadioButton1){
+        if (checkedAlan) {
             score++;
         }
-        return score ;
+
+        if (checkedMercury) {
+            score++;
+        }
+
+
+        if (checkedRadioButton2) {
+            score++;
+        }
+        return score;
     }
 
     //Print Score
@@ -113,24 +108,21 @@ public class MainActivity extends AppCompatActivity {
         }
         if (finalScore == 4) {
             Toast.makeText(this, "Your final score is 4!", Toast.LENGTH_SHORT).show();
-        }
-        else if (finalScore == 3){
+        } else if (finalScore == 3) {
             Toast.makeText(this, "Your final score is 3!", Toast.LENGTH_SHORT).show();
-        }
-        else if (finalScore == 2){
+        } else if (finalScore == 2) {
             Toast.makeText(this, "Your final score is 2", Toast.LENGTH_SHORT).show();
-        }
-        else if (finalScore == 1){
+        } else if (finalScore == 1) {
             Toast.makeText(this, "Your final score is 1", Toast.LENGTH_SHORT).show();
-        }
-        else if (finalScore == 0){
+        } else if (finalScore == 0) {
             Toast.makeText(this, "You need to improve your General knowledge", Toast.LENGTH_SHORT).show();
         }
 
     }
+
     // Reset Score
     public void Reset(View v) {
-        //score = 0;
+        score = 0;
         //finalScore = 0;
         displayMessage("Score set to Zero");
         RadioButton radioButton1 = (RadioButton) findViewById(R.id.RadioButton1);
